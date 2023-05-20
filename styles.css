@@ -1,0 +1,108 @@
+*
+{
+    margin:0;
+    padding: 0;
+}
+body
+{
+   background-color:#e5e9ec;
+   font-family: 'Ubuntu', sans-serif;
+}
+.quiz
+{
+    text-align: center;
+    background-color: #fde74c;
+    padding: 1%;
+    height: 80vh;
+    width: 500px;
+    margin: 4% auto 0 auto;
+    border-radius: 19px;
+    box-shadow: 4px 4px 8px black;
+}
+.ques
+{
+    font-size: 2rem;
+    margin-bottom: 2%;
+    color: rgb(12, 12, 105);
+}
+.opt
+{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 4% 0 0 1%;
+    background-color:#e5e9ec;
+    width: 400px;
+    height: 80px;
+    font-size: 2rem;
+    text-align: left;
+    padding: 3%;
+    border: 2px solid rgb(12, 12, 105);
+    border-radius: 19px;
+    font-weight: bold;
+    display: inline-block;
+    color: rgb(12, 12, 105);
+}
+.opt:hover
+{
+    width: 420px;
+}
+.line
+{
+    margin: 5% auto 4% auto;
+    width: 90%;
+    height: 2px;
+    background-color: rgb(12, 12, 105);
+    
+}
+.ques_no
+{ 
+    color: rgb(12, 12, 105);
+    text-align: left;
+    margin-left: 6%;
+}
+.actions
+{
+    margin-top: 2%;
+    display: flex;
+    justify-content: end;
+    
+}
+.act
+{
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 2%;
+    width: 120px;
+    height: 50px;
+     border: 4px solid black;
+    border-radius: 9px;
+     font-size: 1.8rem;
+     padding: 1%;
+     justify-content: right;
+     color: #e5e9ec;
+    border: 4px solid rgb(50, 125, 238);
+    background-color:  rgb(50, 125, 238);
+}
+.sub
+{
+    color: #e5e9ec;
+    border: 4px solid green;
+    background-color: green;
+}
+.next
+{
+    display: none;
+}
+.act:hover{
+    background-color:  rgb(0, 101, 253);;
+}
+.correct
+{
+background-color: rgb(129, 207, 122);
+}
+.wrong
+{
+background-color: rgb(221, 134, 134);
+}
+.disable
+{
+    pointer-events: none;
+}
