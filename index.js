@@ -91,9 +91,9 @@ const ques_cnt=document.querySelector(".ques_no")
 const nxt=document.querySelector(".next");
 const all_elbtn=document.querySelector(".all_opt")
 
-let i=0,w=0;
+let i=0,w=0,cor=0;
 let cor_ans="";
-function load()
+function load(i)
 {       
 el_ques.innerHTML="Q"+(i+1)+"."+question[i].q;
 ans1.innerHTML="A. "+question[i].op1;
@@ -103,7 +103,7 @@ ans4.innerHTML="D. "+question[i].op4;
 cor_ans=question[i].ans
 ques_cnt.innerHTML="Question "+(i+1)+" of "+question.length; 
 }
-load();
+load(i);
 
 function check(that_btn)
 {
@@ -112,28 +112,27 @@ function check(that_btn)
  if(idans==cor_ans)
  {
     that_btn.classList.add("correct")
- }
+    cor++;
+}
  else
  {
     that_btn.classList.add("wrong")
+    w++;
  }
  document.getElementById(cor_ans).classList.add("correct")
  all_elbtn.classList.add("disable")
 }
 function nextQues()
 {
+    i++;
     if(i<question.length)
     {
-        i++
-        load();
-    }
-    else
-    {
-        w++;
+        load(i);
     }
     if(i==question.length-1)
     {
         nxt.innerHTML="Finish"
+        nxt.addEventListener("click",finish);
     }
      for(let i=0;i<el_btn.length;i++)
      {
@@ -145,3 +144,29 @@ function nextQues()
     all_elbtn.classList.remove("disable");
 }
 nxt.addEventListener("click",nextQues)
+let final_score=document.querySelector(".finish")
+function finish()
+{
+    let p=(cor/question.length)*100;
+    document.querySelector(".right_ans").innerHTML=`Total Question Correct :${cor}`;
+    document.querySelector(".wrong_ans").innerHTML=`Total Question Wrong :${w}`;
+    document.querySelector(".percent").innerHTML=`Your score : ${p}%`
+    final_score.style.display="block"
+}
+let again=document.querySelector(".pa")
+again.addEventListener("click",()=>
+{
+    i=0;
+    w=0;
+    cor=0;
+    final_score.style.display="none"
+    nxt.innerHTML="NEXT"
+    for(let i=0;i<4;i++)
+    {
+    document.querySelectorAll(".opt")[i].classList.remove("correct")
+    document.querySelectorAll(".opt")[i].classList.remove("wrong")
+    }
+    all_elbtn.classList.remove("disable")
+    load(i);
+     nxt.removeEventListener("click",finish);
+})

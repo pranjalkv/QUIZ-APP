@@ -7,22 +7,27 @@ body
 {
    background-color:#e5e9ec;
    font-family: 'Ubuntu', sans-serif;
+   box-align:center ;
+}
+#main
+{
+    display: flex;
+    margin: 3% 0; 
+    justify-content: center;
 }
 .quiz
 {
+    
     text-align: center;
     background-color: #fde74c;
-    padding: 1%;
-    height: 80vh;
-    width: 500px;
-    margin: 4% auto 0 auto;
-    border-radius: 19px;
+    width: 40vw;
+    border-radius: 20px;
     box-shadow: 4px 4px 8px black;
 }
 .ques
 {
-    font-size: 2rem;
-    margin-bottom: 2%;
+    font-size: 1.8rem;
+   margin: 2%;
     color: rgb(12, 12, 105);
 }
 .opt
@@ -30,9 +35,9 @@ body
     font-family: 'Ubuntu', sans-serif;
     margin: 4% 0 0 1%;
     background-color:#e5e9ec;
-    width: 400px;
-    height: 80px;
-    font-size: 2rem;
+    width: 80%;
+    height: 70px;
+    font-size: 1.4rem;
     text-align: left;
     padding: 3%;
     border: 2px solid rgb(12, 12, 105);
@@ -43,7 +48,7 @@ body
 }
 .opt:hover
 {
-    width: 420px;
+    width: 85%;
 }
 .line
 {
@@ -53,18 +58,26 @@ body
     background-color: rgb(12, 12, 105);
     
 }
+.bottom
+{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-bottom: 4%;
+}
 .ques_no
 { 
+    font-size: 1rem;
     color: rgb(12, 12, 105);
     text-align: left;
+    margin-top: 3%;
     margin-left: 6%;
 }
 .actions
 {
-    margin-top: 2%;
+    margin-right: 6%;
     display: flex;
     justify-content: end;
-    
 }
 .act
 {
@@ -105,4 +118,76 @@ background-color: rgb(221, 134, 134);
 .disable
 {
     pointer-events: none;
+}
+.finish
+{
+    position: fixed;
+    top: 0%;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 4px 4px 8px black;
+    font-size: 2.5rem;
+    backdrop-filter: blur(10px);
+    display: none;
+}
+.finish > h1
+{
+    font-size: 3rem;
+}
+.scores
+{
+    margin-top: 5%;
+    font-size: large;
+    line-height: 100px;
+}
+.right_ans
+{
+    font-size: 2rem;
+color: green;
+}
+.wrong_ans
+{
+    font-size: 2rem;
+    color: red;
+}
+.percent
+{
+    font-size: 2rem;
+    color: rgb(21, 15, 87);
+}
+.pa
+{
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 2%;
+    width: 220px;
+    height: 50px;
+     border: 4px solid black;
+    border-radius: 9px;
+     font-size: 1.5rem;
+     justify-content: right;
+     color: #e5e9ec;
+    border: 4px solid rgb(50, 125, 238);
+    background-color:  rgb(50, 125, 238);
+}
+@media (max-width:1183px) and (min-width:819px)
+{
+    *{
+        font-size: 80%;
+    }
+        .quiz
+        {
+            width: 60vw;
+        }
+
+}
+@media (max-width:818px)
+{
+    *{
+        font-size: 70%;
+     }
+    .quiz
+    {
+        width: 80vw;
+    }
 }
